@@ -1,77 +1,3 @@
-#title1{
-    color: yellowgreen;
-}
-
-#title2{
-    color: blue;
-}
-
-.secondTitle{
-    color : red
-}
-
-.test{
-    font-size: 130px;
-    font-style: italic;
-}
-
-.error{
-    border-color: red;
-}
-
-h1{
-    color: green;
-}
-
-
-#monPremierIdTitre{
-    color : orange;
-}
-
-.maPremiereClassTitre{
-    color: greenyellow;
-}
-
-.parent{
-    width: 300px;
-    height: 300px;
-    background-color: yellow;
-}
-
-.draggable {
-    width: 100px;
-    height: 100px;
-    background: blue;
-    margin: 10px;
-    cursor: move;
-}
-.dropzone {
-    width: 200px;
-    height: 200px;
-    border: 2px dashed gray;
-    margin: 20px;
-}
-.dragging {
-    opacity: 0.5;
-}
-
-.test{
-font-size: 12px;
-display: flex;
-flex-wrap: wrap;
-margin: 20px;
-padding: 30px;
-height:270px; 
-width: 60%;
-border: 1px solid black;
-border-radius: 30px;
-box-shadow: 0 0 13px black;
-}
-
-img{
-    width: 100px;
-    height: 130px;
-}
 /* Style général */
 body {
     font-family: Arial, sans-serif;
@@ -80,71 +6,86 @@ body {
     padding: 20px;
 }
 
-/* Style pour chaque exercice */
-div[id^="exercice"] {
-    margin: 20px 0;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-h2 {
+/* Style des titres */
+#title {
     color: #333;
     margin-bottom: 15px;
 }
 
-/* Styles pour les inputs */
-input {
-    padding: 5px;
-    margin: 10px 0;
-    width: 200px;
+.title_heading_article {
+    color: #333;
+    margin-bottom: 15px;
 }
 
-/* Style pour le bouton */
+/* Style des éléments survolables */
+.secondTitle {
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Style des inputs */
+#barfoo, #textInput {
+    width: 300px;
+    padding: 8px;
+    margin: 10px 0;
+}
+
+/* Style du bouton */
 #counterBtn {
     padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 #counterBtn:hover {
     background-color: #45a049;
 }
 
-/* Style pour l'affichage du compteur */
+/* Zone de compteur */
 #counterDisplay {
     font-size: 24px;
     margin: 10px 0;
 }
 
-/* Style pour la zone de jeu */
-#gameZone {
-    width: 200px;
-    height: 200px;
-    background-color: green;
-    margin: 20px 0;
-    cursor: pointer;
-    transition: background-color 0.3s;
+/* Style de la liste */
+#liste {
+    padding: 0;
+    margin: 10px 0;
 }
 
-/* Style pour le score */
-#score {
-    font-weight: bold;
-    color: #333;
+/* Zone de drag and drop */
+.draggable {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    margin: 10px 0;
+    cursor: move;
 }
 
-/* Style pour le compteur de caractères */
+.dropzone {
+    min-height: 50px;
+    border: 2px dashed #ccc;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+/* État pendant le drag */
+.dragging {
+    opacity: 0.5;
+}
+
+/* Liste des caractères */
+#charList {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Compteur de caractères */
 #charCounter {
     color: #666;
     font-size: 14px;
-}
-
-/* Style pour le texte en sortie */
-#outputText {
-    margin: 10px 0;
-    padding: 5px;
-    min-height: 20px;
 }
