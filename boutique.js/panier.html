@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DO A- Panier</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+ 
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="./index.html">DO A</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Accueil</a></li>
+                <li><a href="./panier.html" class="active">Panier<span id="cart-count">(0)</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <Contenu du panier -->
+    <main class="main-content">
+        <div class="cart-container">
+            <h1>Votre Panier</h1>
+           
+            <div class="cart-items" id="cart-items">
+           
+            </div>
+
+           
+            <div class="cart-summary-total">
+                <div class="summary-row">
+                    <span>Sous-total :</span>
+                    <span id="subtotal">0.00€</span>
+                </div>
+                <div class="summary-row">
+                    <span>Livraison :</span>
+                    <span id="shipping">Gratuite</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total :</span>
+                    <span id="cart-total">0.00€</span>
+                </div>
+                <button class="checkout-button" id="checkout-btn">
+                    Procéder au paiement
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 DO A - Tous droits réservés</p>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>

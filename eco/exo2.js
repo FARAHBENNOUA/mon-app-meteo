@@ -215,6 +215,13 @@ const foods = [
 const foodFamilly = foods.map(food => `${food.name} appartient à la famille ${food.family}`);
 
 console.log ("Food familly", foodFamilly);
+const students = [
+    { id: 1, name: "Alice", marks: [15, 17, 13], age: 20, city: "Paris" },
+    { id: 2, name: "Bob", marks: [12, 14, 16], age: 22, city: "Lyon" },
+    { id: 3, name: "Charlie", marks: [18, 16, 19], age: 19, city: "Paris" },
+    { id: 4, name: "David", marks: [10, 13, 15], age: 21, city: "Lyon" },
+    { id: 4, name: "Lucie", marks: [14, 11, 5], age: 31, city: "Paris" },
+];
 
 
 //Pour les étudiants de Paris et leur moyenne :
@@ -234,7 +241,7 @@ console.log("Étudiants de Paris avec leurs moyennes:", parisStudents);
 const studentsWithNewMark = students.map(student => {
   const average = student.marks.reduce((acc, mark) => acc + mark, 0) / student.marks.length;
   
-  if (average > 15) {
+  if (average >=15) {
     return {
       ...student,
       marks: [...student.marks, 20] // Bonus de 20 pour les bons élèves

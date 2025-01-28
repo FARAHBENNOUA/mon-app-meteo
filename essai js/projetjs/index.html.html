@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Cars - Voitures de Prestige</title>
+    <link href="style.css.css" rel="stylesheet">
+    <script src="script.js.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">LUXURY CARS</div>
+        <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#vehicules">Véhicules</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Section Accueil -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>LUXURY CARS</h1>
+            <h2>L'Excellence Automobile</h2>
+            <p>Location de voitures de luxe et supercars</p>
+            <a href="#vehicules" class="btn-decouvrir">Découvrir notre flotte</a>
+        </div>
+    </section>
+
+    <!-- Section Véhicules -->
+    <section id="vehicules" class="vehicules">
+        <h2>Notre Collection</h2>
+        <div class="vehicules-grid">
+            <!-- Véhicule 1 -->
+            <div class="vehicule-card">
+                <img src="/api/placeholder/400/300" alt="Ferrari SF90">
+                <div class="vehicule-info">
+                    <h3>Ferrari SF90 Stradale</h3>
+                    <p>1000 ch - V8 Hybride</p>
+                    <ul>
+                        <li>0-100 km/h : 2.5s</li>
+                        <li>Vitesse max : 340 km/h</li>
+                        <li>Transmission : Automatique</li>
+                    </ul>
+                    <div class="prix">À partir de 2500€/jour</div>
+                    <button class="btn-reserver">Réserver maintenant</button>
+                </div>
+            </div>
+
+            <!-- Véhicule 2 -->
+            <div class="vehicule-card">
+                <img src="/api/placeholder/400/300" alt="Lamborghini Huracán">
+                <div class="vehicule-info">
+                    <h3>Lamborghini Huracán</h3>
+                    <p>640 ch - V10</p>
+                    <ul>
+                        <li>0-100 km/h : 2.9s</li>
+                        <li>Vitesse max : 325 km/h</li>
+                        <li>Transmission : Automatique</li>
+                    </ul>
+                    <div class="prix">À partir de 2000€/jour</div>
+                    <button class="btn-reserver">Réserver maintenant</button>
+                </div>
+            </div>
+
+            <!-- Véhicule 3 -->
+            <div class="vehicule-card">
+                <img src="/api/placeholder/400/300" alt="Rolls Royce Phantom">
+                <div class="vehicule-info">
+                    <h3>Rolls Royce Phantom</h3>
+                    <p>571 ch - V12</p>
+                    <ul>
+                        <li>0-100 km/h : 5.3s</li>
+                        <li>Vitesse max : 250 km/h</li>
+                        <li>Transmission : Automatique</li>
+                    </ul>
+                    <div class="prix">À partir de 3000€/jour</div>
+                    <button class="btn-reserver">Réserver maintenant</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Services -->
+    <section id="services" class="services">
+        <h2>Nos Services Premium</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🚗</div>
+                <h3>Livraison</h3>
+                <p>Livraison et récupération à domicile ou à l'aéroport</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">👨‍✈️</div>
+                <h3>Chauffeur</h3>
+                <p>Service chauffeur privé disponible 24h/24</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Assistance</h3>
+                <p>Assistance technique disponible 7j/7</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact">
+        <h2>Contactez-nous</h2>
+        <div class="contact-container">
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Votre nom*" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Votre email*" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Votre téléphone*" required>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Sélectionnez un véhicule</option>
+                        <option value="ferrari">Ferrari SF90</option>
+                        <option value="lamborghini">Lamborghini Huracán</option>
+                        <option value="rolls">Rolls Royce Phantom</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Votre message*" required></textarea>
+                </div>
+                <button type="submit" class="btn-envoyer">Envoyer la demande</button>
+            </form>
+
+            <div class="contact-info">
+                <h3>Informations de contact</h3>
+                <p><strong>Adresse:</strong> 123 Avenue des Champs-Élysées, Paris</p>
+                <p><strong>Téléphone:</strong> +33 1 23 45 67 89</p>
+                <p><strong>Email:</strong> contact@luxurycars.fr</p>
+                <p><strong>Horaires:</strong> Lun-Sam: 9h-19h | Dim: Sur RDV</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>LUXURY CARS</h4>
+                <p>Location de voitures de luxe depuis 2010</p>
+            </div>
+            <div class="footer-section">
+                <h4>Liens rapides</h4>
+                <ul>
+                    <li><a href="#vehicules">Notre flotte</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Suivez-nous</h4>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 LUXURY CARS - Tous droits réservés</p>
+        </div>
+    </footer>
+</body>
+</html>
