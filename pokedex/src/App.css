@@ -1,0 +1,67 @@
+.app-container {
+  min-height: 100vh;
+  background-color: #1a1a1a;
+}
+
+.navbar {
+  background: linear-gradient(to right, #3B4CCA, #2a3580);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: -webkit-sticky; /* Pour Safari iOS 7+ */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-brand {
+  color: #FFDE00;
+  font-size: 2em;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: 'Arial Black', sans-serif;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  background-color: #FFDE00;
+  color: #3B4CCA;
+}
+
+.nav-link.active {
+  background-color: #FFDE00;
+  color: #3B4CCA;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+      flex-direction: column;
+      text-align: center;
+      padding: 10px;
+  }
+
+  .nav-brand {
+      margin-bottom: 10px;
+  }
+
+  .nav-links {
+      width: 100%;
+      justify-content: center;
+  }
+}
+

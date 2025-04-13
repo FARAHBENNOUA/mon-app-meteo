@@ -1,0 +1,86 @@
+/* Style pour Home.css */
+.home-container {
+    padding: 20px;
+    text-align: center;
+    min-height: calc(100vh - 70px);
+  }
+  
+  .home-title {
+    padding: 20px 0;
+    margin-bottom: 40px;
+  }
+  
+  h1 {
+    font-size: 4em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+    font-family: 'Arial Black', sans-serif;
+  }
+  
+  .pokemon-title-blue {
+    color: #3B4CCA;
+    margin-right: 15px;
+  }
+  
+  .pokemon-title-yellow {
+    color: #FFDE00;
+    -webkit-text-stroke: 2px #3B4CCA;
+    animation: glow 2s infinite;
+  }
+  
+  .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(59, 76, 202, 0.3);
+  }
+  
+  .video-container iframe {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 222, 0, 0.3);
+  }
+  
+  @keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 222, 0, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 222, 0, 0.8);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(255, 222, 0, 0.5);
+    }
+  }
+  
+  @media (max-width: 900px) {
+    h1 {
+        font-size: 3em;
+    }
+    
+    .video-container iframe {
+        width: 100%;
+        height: 400px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+    
+    .video-container iframe {
+        height: 300px;
+    }
+    
+    .pokemon-title-blue,
+    .pokemon-title-yellow {
+        display: block;
+        margin: 10px 0;
+    }
+  }
