@@ -1,0 +1,290 @@
+weather-tabs-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .tab-navigation {
+    display: flex;
+    background-color: #0082c3;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .tab-button {
+    background: none;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .tab-button.active {
+    background-color: #0063a0;
+    box-shadow: inset 0 -3px 0 white;
+  }
+  
+  .tab-button:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .tab-content {
+    padding: 20px;
+  }
+  
+  /* Style for Today tab */
+  .main-weather {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px;
+    background-color: #0082c3;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .temperature-display {
+    text-align: center;
+  }
+  
+  .large-temp {
+    font-size: 5rem;
+    font-weight: bold;
+  }
+  
+  .weather-condition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: capitalize;
+  }
+  
+  .weather-condition img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .wind-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .wind-direction {
+    margin-bottom: 5px;
+  }
+  
+  .daily-periods {
+    display: flex;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  .period {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border-right: 1px solid #e0e0e0;
+    cursor: pointer;
+  }
+  
+  .period:last-child {
+    border-right: none;
+  }
+  
+  .period.active {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+  
+  .period-name {
+    font-size: 0.8rem;
+    color: #666;
+  }
+  
+  .period-time {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  .day-summary {
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    padding: 15px;
+  }
+  
+  .day-summary h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .summary-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  
+  .summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .label {
+    color: #666;
+  }
+  
+  .value {
+    font-weight: bold;
+  }
+  
+  /* Style for Hourly tab */
+  .hourly-scroll {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 0;
+    margin-bottom: 10px;
+  }
+  
+  .hourly-item {
+    min-width: 100px;
+    text-align: center;
+    padding: 10px;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hourly-item:last-child {
+    border-right: none;
+  }
+  
+  .hour-time {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .hour-temp {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  
+  .hour-rain, .hour-wind {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  /* Style for Daily tab */
+  .daily-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .daily-item {
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr 100px 80px;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .daily-item:last-child {
+    border-bottom: none;
+  }
+  
+  .day-date {
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  
+  .day-description {
+    text-transform: capitalize;
+    color: #666;
+  }
+  
+  .day-temps {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .max-temp {
+    font-weight: bold;
+    color: #f44336;
+  }
+  
+  .min-temp {
+    color: #2196f3;
+  }
+  
+  .day-rain {
+    color: #2196f3;
+    font-weight: 500;
+  }
+  
+  /* Style for Weekend tab */
+  .weekend-days {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  .weekend-day {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 15px;
+  }
+  
+  .weekend-day h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+  }
+  
+  .day-periods {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .period-block {
+    text-align: center;
+  }
+  
+  .period-title {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .period-temp {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .daily-item {
+      grid-template-columns: 1fr 50px 1fr;
+      grid-template-rows: auto auto;
+      gap: 5px;
+    }
+    
+    .day-description {
+      grid-column: 1 / -1;
+    }
+    
+    .weekend-days {
+      grid-template-columns: 1fr;
+    }
+  }
