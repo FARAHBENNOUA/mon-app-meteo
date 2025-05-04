@@ -1,12 +1,11 @@
 import axios from 'axios';
-import config from '../config/config';
+import config from './config/config';
 
-// Création d'une instance Axios avec l'URL de base de votre API
+
 const API = axios.create({
   baseURL: config.api.baseUrl
 });
 
-// Météo
 export const getWeather = async (city) => {
   try {
     const response = await API.get(config.api.endpoints.weather, { params: { city } });

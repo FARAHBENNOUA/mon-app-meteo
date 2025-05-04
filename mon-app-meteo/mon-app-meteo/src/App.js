@@ -20,16 +20,30 @@ function App() {
 
   useEffect(() => {
     if (city) {
+      console.log("useEffect déclenché avec la ville:", city);
       fetchCompleteWeather(city);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [city]);
 
   const handleSearch = (cityName) => {
+    console.log("handleSearch appelé avec:", cityName);
     if (cityName && cityName !== city) {
       console.log(`Recherche de la météo pour: ${cityName}`);
       setCity(cityName);
+    } else {
+      console.log("Même ville ou nom de ville invalide:", cityName === city ? "même ville" : "nom invalide");
     }
+  };
+
+  // Helper function to get city name safely
+  const getCityName = (data) => {
+    // Check if the data has a name property
+    if (data && data.name) return data.name;
+    // Or if it has a city property
+    if (data && data.city) return data.city;
+    // Default to current city state
+    return city;
   };
 
   return (
@@ -43,9 +57,9 @@ function App() {
               onRegisterClick={() => setIsRegisterOpen(true)} 
             />
             <div className="current-location">
-              {weather && weather.name && (
+              {weather && (
                 <div className="location-temp">
-                  {weather.name} {weather.country === 'FR' ? `(${weather.name.slice(0, 2)})` : ''} 
+                  {getCityName(weather)} {weather.country === 'FR' ? `(${getCityName(weather).slice(0, 2)})` : ''} 
                   <span className="temp">{Math.round(weather.temperature)}°</span>
                 </div>
               )}
@@ -62,14 +76,14 @@ function App() {
             
             {error && <p className="error">{error}</p>}
             
-            {fullWeatherData && weather && weather.name && (
+            {fullWeatherData && weather && (
               <>
                 <div className="city-header">
-                  <h1>METEO {weather.name.toUpperCase()} ({weather.country === 'FR' ? weather.name.substring(0, 2) : weather.country}) 
+                  <h1>METEO {getCityName(weather).toUpperCase()} ({weather.country === 'FR' ? getCityName(weather).substring(0, 2) : weather.country}) 
                   <i className="fas fa-star favorite-icon"></i></h1>
                 </div>
-                <WeatherTabs weatherData={fullWeatherData} city={weather.name} />
-                <FavoriteButton city={weather.name} />
+                <WeatherTabs weatherData={fullWeatherData} city={getCityName(weather)} />
+                <FavoriteButton city={getCityName(weather)} />
               </>
             )}
             
@@ -81,7 +95,13 @@ function App() {
           )}
           
           {isRegisterOpen && (
-            <Register onClose={() => setIsRegisterOpen(false)} />
+            <Register 
+              onClose={() => setIsRegisterOpen(false)} 
+              onSwitchToLogin={() => {
+                setIsRegisterOpen(false);
+                setIsLoginOpen(true);
+              }}
+            />
           )}
         </div>
       </ThemeProvider>
@@ -89,4 +109,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

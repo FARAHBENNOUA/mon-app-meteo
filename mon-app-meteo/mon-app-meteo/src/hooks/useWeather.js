@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { getApiUrl } from '../config/config';
 
@@ -64,7 +63,6 @@ const useWeather = () => {
       let weatherData = null;
       try {
         weatherData = await fetchWeather(city);
-        setWeather(weatherData);
         console.log("Météo récupérée avec succès:", weatherData);
       } catch (weatherError) {
         console.error("Erreur météo:", weatherError);
@@ -74,7 +72,6 @@ const useWeather = () => {
       let forecastData = null;
       try {
         forecastData = await fetchForecast(city);
-        setForecast(forecastData);
         console.log("Prévisions récupérées avec succès:", forecastData);
       } catch (forecastError) {
         console.error("Erreur prévisions:", forecastError);
@@ -82,27 +79,38 @@ const useWeather = () => {
       
       // Création du format adapté même si l'une des données est manquante
       if (weatherData || forecastData) {
-        const completeData = {
-          current: weatherData || {
+        // Créer les données actuelles avec les valeurs par défaut si nécessaire
+        const currentData = weatherData || {
+          temperature: 20,
+          description: "Information temporaire",
+          icon: "01d",
+          humidity: 50,
+          wind: 5,
+          country: "FR",
+          name: city
+        };
+        
+        // Créer les données de prévision avec les valeurs par défaut si nécessaire
+        const forecastFormattedData = forecastData || [
+          {
+            date: new Date().toISOString().split('T')[0],
             temperature: 20,
-            description: "Information temporaire",
-            icon: "01d",
-            humidity: 50,
-            wind: 5,
-            country: "FR",
-            name: city
-          },
-          forecast: forecastData || [
-            {
-              date: new Date().toISOString().split('T')[0],
-              temperature: 20,
-              description: "Prévision temporaire",
-              icon: "01d"
-            }
-          ]
+            description: "Prévision temporaire",
+            icon: "01d"
+          }
+        ];
+        
+        // Assembler les données complètes
+        const completeData = {
+          current: currentData,
+          forecast: forecastFormattedData
         };
         
         console.log("Données complètes assemblées:", completeData);
+        
+        // IMPORTANT: Mettre à jour les deux états de manière cohérente
+        setWeather(currentData);  // weather = fullWeatherData.current
+        setForecast(forecastFormattedData);
         setFullWeatherData(completeData);
       } else {
         throw new Error("Aucune donnée météo disponible");

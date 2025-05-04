@@ -33,6 +33,19 @@ function FavoritesList({ onSelectCity }) {
     });
   }
 
+  // Fonction de gestion du clic avec logs
+  const handleCityClick = (cityName) => {
+    console.log("Clic sur la ville:", cityName);
+    
+    // Vérifier que onSelectCity est bien une fonction
+    if (typeof onSelectCity === 'function') {
+      onSelectCity(cityName);
+      console.log("Fonction onSelectCity appelée avec:", cityName);
+    } else {
+      console.error("onSelectCity n'est pas une fonction:", onSelectCity);
+    }
+  };
+
   return (
     <div className="favorites-list">
       <h3>Villes suggérées</h3>
@@ -41,14 +54,18 @@ function FavoritesList({ onSelectCity }) {
           <li key={city.id || `city-${index}`}>
             <span 
               className="favorite-item" 
-              onClick={() => onSelectCity(city.city)}
+              onClick={() => handleCityClick(city.city)}
+              style={{ cursor: 'pointer' }} // Assure que le curseur change au survol
             >
               {city.city}
             </span>
             {city.isFavorite && (
               <button 
                 className="remove-button"
-                onClick={() => city.id && removeFavorite(city.id)}
+                onClick={() => {
+                  console.log("Suppression du favori:", city.id);
+                  city.id && removeFavorite(city.id);
+                }}
               >
                 ✕
               </button>
